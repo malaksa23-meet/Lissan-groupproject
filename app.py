@@ -104,20 +104,6 @@ def wshb():
 
 
 
-@app.route('/', methods=['GET', 'POST'])
-def home(): 
-    error = "" 
-    #if request.method == 'POST':
-        #try:
-        #login_session['user'] =auth.create_user_with_email_and_password(email, password)
-        #user = {"name": name,"email":email, "password":password,"bio":bio,"user_name":user_name}
-        #db.child("Users").child(login_session['user']['localId']).set(user)
-        #return redirect(url_for('add_notes'))
-        #except:
-            #error = "Authentication failed" 
-            #return render_template("signup.html", error=error)
-        #return render_template("add_notes.html")
-    return render_template("add_notes.html")
 
 
 
@@ -144,19 +130,19 @@ def add_notes():
 
 
 
-@app.route('/sign_out', methods=['GET', 'POST'])
-def sign_out():
-    print('hello')
+# @app.route('/sign_out', methods=['GET', 'POST'])
+# def sign_out():
+#     print('hello')
     #return render_template("")
 
 
 
 
-@app.route('/delete/<string:key>', methods=['GET', 'POST'])
-def delete(key):
-    print("key:", key)
-    db.child("Notes").child(key).remove()
-    return redirect(url_for('add_notes'))
+# @app.route('/delete/<string:key>', methods=['GET', 'POST'])
+# def delete(key):
+#     print("key:", key)
+#     db.child("Notes").child(key).remove()
+#     return redirect(url_for('add_notes'))
 
 
 if __name__ == "__main__":
