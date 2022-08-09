@@ -23,10 +23,90 @@ db = firebase.database()
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.config['SECRET_KEY'] = 'super-secret-key'
 
+@app.route('/about')
+def about():
+    return render_template('about.html') 
+
+
+
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html') 
+
+
+
+
+
+@app.route('/course')
+def course():
+    return render_template('course.html') 
+
+
+@app.route('/donate')
+def donate():
+    return render_template('donate.html') 
+
+@app.route('/gallery')
+def gallery():
+    return render_template('gallery.html') 
+
+@app.route('/')
+def home():
+    return render_template('home.html') 
+
+
+
+@app.route('/past_projects')
+def past():
+    return render_template('past.html') 
+
+@app.route('/projects')
+def projects():
+    return render_template('projects.html') 
+
+
+
+
+@app.route('/rights')
+def rights():
+    return render_template('rights.html') 
+
+
+@app.route('/team')
+def team():
+    return render_template('team.html') 
+
+@app.route('/training')
+def training():
+    return render_template('training.html') 
+
+@app.route('/updates')
+def updates():
+    return render_template('updates.html') 
+
+
+
+
+@app.route('/women_speaking_hebrew')
+def wsh():
+    return render_template('wsh.html') 
+
+@app.route('/women_speaking_hebrew_bengurion')
+def wshb():
+    return render_template('wshb.html') 
+
+
+
+
+
+
+
+
 
 @app.route('/', methods=['GET', 'POST'])
 def home(): 
-    error = ""
+    error = "" 
     #if request.method == 'POST':
         #try:
         #login_session['user'] =auth.create_user_with_email_and_password(email, password)
@@ -61,6 +141,7 @@ def add_notes():
     else:
         all_notes=db.child("Notes").get().val()
         return render_template("add_notes.html", all_notes=all_notes)
+
 
 
 @app.route('/sign_out', methods=['GET', 'POST'])
