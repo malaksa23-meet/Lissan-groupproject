@@ -5,11 +5,15 @@
     <title>Sticky notes </title> 
     
     <!---<link rel="stylesheet" href="src/add_posts.css">--->
-     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/add_posts.css') }}">
-  
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/add_notes.css') }}">
+
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/notes.css') }}">
+
+    <!---<script src="src/add_posts.js" defer></script>--->
+
 
    <style >
-       *{
+       * {
     box-sizing: border-box;
 }
 body {
@@ -94,11 +98,12 @@ a {
     .header {
         flex-direction: column;
         align-items: center;
-        .header{
+        .header
+
         width: 80%;
         margin: 0 auto;
         max-width: 1150px;
-    }
+        
     }
 
 }
@@ -110,7 +115,9 @@ a {
     }
 
 }
-
+div{
+ background-image: url("https://www.freecodecamp.org/news/content/images/size/w2000/2021/06/w-qjCHPZbeXCQ-unsplash.jpg");
+}
   </style>
 
    
@@ -119,7 +126,7 @@ a {
 <body>
 
     <header class="header">
-        <h1 class="logo"><a href="#">Lissan</a></h1>
+        <h1 class="logo"><a href="#">LISSAN</a></h1>
       <ul class="main-nav">
           <li><a href="/">Home</a></li>
           <li><a href="/signup">SignUp</a></li>
@@ -131,8 +138,12 @@ a {
     
  
 
-    <form method="POST" action="/add_posts">
-     
+    <form method="POST" action="/add_notes">
+        <style>  
+            div{background-image: url("https://www.freecodecamp.org/news/content/images/size/w2000/2021/06/w-qjCHPZbeXCQ-unsplash.jpg");}
+
+
+        </style>
         <title>Post :</title>
 
         <label>Title :</label>
@@ -142,29 +153,29 @@ a {
         <label>Text :</label>
         <input type="text" name= "text" maxlength="280">
         <div id ="app">
+
+
+
+
+    {{ error }}
 {% for i in all_notes%}
         
-<textarea class  ="note"> 
- Title: {{i['title']}}
- Text: {{i['text']}}
-</textarea>
+
+<p class  ="note"> 
+ Title: {{all_notes[i]['title']}}<br/>
+ Text: {{all_notes[i]['text']}}<br/>
+<a href="/delete/{{i}}" > Delete</a><br/>
+</p>
+
 {%endfor%} 
-
-
+ <input type="submit" >
+ </form>
 
 <button class = "add-note" type="button">+</button>
 </div>
-        <input type="submit" >
+       
 
 
-    </form>
-    {{ error }}
-
-
-    
-
-
-
-    </script>
+   
 </body>
 </html>
