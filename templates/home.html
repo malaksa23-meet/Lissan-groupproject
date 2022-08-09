@@ -319,7 +319,27 @@ display: none;
 					<div class="elementor-widget-wrap">
 				<div class="elementor-element elementor-element-5df28939 elementor-invisible elementor-widget elementor-widget-text-editor" data-id="5df28939" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-					<div class="elementor-text-editor elementor-clearfix"><div id="comp-jk84w5cp" class="txtNew" data-packed="false" data-vertical-text="false" data-min-height="316"><p><span style="font-weight: 400;">Lissan (Arabic for language or tongue) is a nonprofit organization that promotes gender and social equality in Jerusalem through language education. Lissan’s flagship program, Medabrot Ivrit, offers practical Hebrew classes for East Jerusalemite women to provide them with greater access to rights, resources, and opportunities. Through practical and accessible Hebrew classes for women, pedagogical and cultural sensitivity training for teachers, and joint programming for Israeli and Palestinian volunteers, Lissan aims to bridge the gap between East and West Jerusalem and strengthen East Jerusalemite women. Lissan’s long term vision is for East Jerusalemite women to have ultimate agency in their personal and professional lives, and for the city of Jerusalem – both East and West – to become a more just and equal space for all of its residents.</span></p></div></div>
+					<div class="elementor-text-editor elementor-clearfix"><div id="comp-jk84w5cp" class="txtNew" data-packed="false" data-vertical-text="false" data-min-height="316"><p><span style="font-weight: 400;">Lissan (Arabic for language or tongue) is a nonprofit organization that promotes gender and social equality in Jerusalem through language education.<span id="dots">...</span><span id="more"> Lissan’s flagship program, Medabrot Ivrit, offers practical Hebrew classes for East Jerusalemite women to provide them with greater access to rights, resources, and opportunities. Through practical and accessible Hebrew classes for women, pedagogical and cultural sensitivity training for teachers, and joint programming for Israeli and Palestinian volunteers, Lissan aims to bridge the gap between East and West Jerusalem and strengthen East Jerusalemite women. Lissan’s long term vision is for East Jerusalemite women to have ultimate agency in their personal and professional lives, and for the city of Jerusalem – both East and West – to become a more just and equal space for all of its residents.</span></p></div></div>
+					<button onclick="myFunction()" id="myBtn">Read more</button>
+
+					<script>
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
+
 				</div>
 				</div>
 						</div>
