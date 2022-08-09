@@ -120,7 +120,7 @@ def add_notes():
             note={"text":text,"title":title}
             db.child("Notes").push(note)
             all_notes=db.child("Notes").get().val()
-            return redirect(url_for('all_notes'), all_notes=all_notes)
+            return redirect(url_for('add_notes'), all_notes=all_notes)
         except:
             error:"error - can't add the posts"
             return render_template("add_notes.html", error = error, all_notes=all_notes)
@@ -130,19 +130,14 @@ def add_notes():
 
 
 
-# @app.route('/sign_out', methods=['GET', 'POST'])
-# def sign_out():
-#     print('hello')
-    #return render_template("")
 
 
 
-
-# @app.route('/delete/<string:key>', methods=['GET', 'POST'])
-# def delete(key):
-#     print("key:", key)
-#     db.child("Notes").child(key).remove()
-#     return redirect(url_for('add_notes'))
+@app.route('/delete/<string:key>', methods=['GET', 'POST'])
+def delete(key):
+    print("key:", key)
+    db.child("Notes").child(key).remove()
+    return redirect(url_for('add_notes'))
 
 
 if __name__ == "__main__":
