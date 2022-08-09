@@ -126,8 +126,8 @@ def add_notes():
             return render_template("add_notes.html", error = error, all_notes=all_notes)
     else:
         all_notes=db.child("Notes").get().val()
-        if len(all_notes) == 0:
-            all_notes = ["No Notes"]
+        if not all_notes:
+            all_notes = "No Notes"
         return render_template("add_notes.html", all_notes=all_notes)
 
 
