@@ -115,9 +115,9 @@ a {
     }
 
 }
-div{
+/*div{
  background-image: url("https://www.freecodecamp.org/news/content/images/size/w2000/2021/06/w-qjCHPZbeXCQ-unsplash.jpg");
-}
+}/*
   </style>
 
    
@@ -132,18 +132,18 @@ div{
           <li><a href="/signup">SignUp</a></li>
           <li><a href="/signin">SignIn</a></li>
    
-      </ul>
+      </ul> 
     </header>  -->
 
     
  
 
     <form method="POST" action="/add_notes">
-        <style>  
+       <!-- <style>  
             div{background-image: url("https://www.freecodecamp.org/news/content/images/size/w2000/2021/06/w-qjCHPZbeXCQ-unsplash.jpg");}
 
 
-        </style>
+        </style>--->
         <title>Post :</title>
 
         <label>Title :</label>
@@ -158,6 +158,7 @@ div{
 
 
     {{ error }}
+    {% if all_notes != false %}
 {% for i in all_notes%}
         
 
@@ -168,8 +169,12 @@ div{
 </p>
 
 {%endfor%} 
- <input type="submit" >
+{% else %}
+<p>No Notes</p>
+{% endif %}
+
  </form>
+ <button><input type="submit" ></button>
 
 <button class = "add-note" type="button">+</button>
 </div>
